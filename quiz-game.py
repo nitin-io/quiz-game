@@ -29,6 +29,6 @@ for question, answer in questions.items():
     points -= 0.5
 
 if points > round(len(questions) / 2):
-  print(f"Great! you got {points} points ;)")
+  print(f"Great! you got {points} points, which is {round(points / len(questions) * 100, 2)} percent. ;)")
 else:
-  print(f"Oops! you got {points} points, Prepare well next time ;)")
+  print(f"Oops! you got {points} points, which is {round(points / len(questions) * 100, 2)} percent, Prepare well next time ;)")
