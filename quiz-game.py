@@ -15,14 +15,20 @@ questions = {
   "What does PSU stands for?": "power supply unit"
 }
 
+clean_string = lambda str: str.lower().replace(" ", "")
+
 global points
 points = 0
 
 for question, answer in questions.items():
-  user_answer = input(question + "\n")
-  if user_answer.lower().replace(" ", "") == answer.lower().replace(" ", ""):
+
+  user_answer = clean_string(input(question + "\n"))
+  if user_answer == clean_string(answer):
     points += 1
   else:
-    points -= 1
+    points -= 0.5
 
-print(points)
+if points > round(len(questions) / 2):
+  print(f"Great! you got {points} points ;)")
+else:
+  print(f"Oops! you got {points} points, Prepare well next time ;)")
